@@ -32,14 +32,14 @@
             [disabled]="editar"
           >
             <!-- Opción de rol: Administrador -->
-            @if (!authService.getUserGroup() || authService.getUserGroup() === 'administrador') {
+            @if (!authService.getUserRole() || authService.getUserRole() === 'administrador') {
               <mat-radio-button class="role-pill" value="administrador">
                 <mat-icon class="me-1" fontIcon="admin_panel_settings"></mat-icon>
                 <span class="text-radio">Administrador</span>
               </mat-radio-button>
             }
             <!-- Opción de rol: Maestro -->
-            @if (!authService.getUserGroup() || authService.getUserGroup() === 'administrador' || authService.getUserGroup() === 'maestro') {
+            @if (!authService.getUserRole() || authService.getUserRole() === 'administrador' || authService.getUserRole() === 'maestro') {
               <mat-radio-button class="role-pill" value="maestro">
                 <mat-icon class="me-1" fontIcon="person"></mat-icon>
                 <span class="text-radio">Maestro</span>
