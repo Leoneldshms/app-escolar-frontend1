@@ -56,5 +56,18 @@
         </div>
       </mat-card-content>
     </mat-card>
+    <!-- Formularios de registro según el tipo seleccionado -->
+    <div class="forms-area">
+      <!-- Formularios (vistas) de cada usuario (inyección dinámica) -->
+      @if (isAdmin) {
+        <app-registro-admin [rol]="tipo_user" [datos_user]="user"></app-registro-admin>
+      }
+      @if (isMaestro) {
+        <app-registro-maestros [rol]="tipo_user" [datos_user]="user"></app-registro-maestros>
+      }
+      @if (isAlumno) {
+        <app-registro-alumnos [rol]="tipo_user" [datos_user]="user"></app-registro-alumnos>
+      }
+    </div>
   </div>
 </div>
